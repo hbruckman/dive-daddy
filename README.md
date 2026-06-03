@@ -26,9 +26,7 @@ This project is intended as a lighthearted tribute to scuba diving culture, dive
 
 Add a screenshot here after deployment:
 
-```text
-screenshot.png
-```
+![DiveDaddy Homepage](screenshot.png)
 
 ---
 
