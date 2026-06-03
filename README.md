@@ -24,19 +24,39 @@ This project is intended as a lighthearted tribute to scuba diving culture, dive
 
 ## Screenshot
 
-![DiveDaddy Homepage](screenshot.png)
+![DiveDaddy Homepage](screenshot-home.png)
+
+![DiveDaddy Tours](screenshot-tours.png)
+
+![DiveDaddy Reservations](screenshot-reservations.png)
+
+![DiveDaddy Events](screenshot-events.png)
+
+![DiveDaddy Reviews](screenshot-reviews.png)
+
+![DiveDaddy Awards](screenshot-awards.png)
 
 ---
 
 ## Project Structure
 
 ```text
-dive-daddy/
+DiveDaddy/
 │
-├── index.html
-├── logo.jpeg
 ├── README.md
-└── LICENSE
+├── LICENSE
+│
+├── src/
+│   ├── index.html
+│   └── logo.jpeg
+│
+└── docs/
+    ├── screenshot-home.png
+    ├── screenshot-tours.png
+    ├── screenshot-reservations.png
+    ├── screenshot-events.png
+    ├── screenshot-reviews.png
+    └── screenshot-awards.png
 ```
 
 ---
