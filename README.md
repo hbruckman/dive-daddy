@@ -58,9 +58,8 @@ DiveDaddy/
 ├── README.md
 ├── LICENSE
 │
-├── src/
-│   ├── index.html
-│   └── logo.jpeg
+├── index.html
+├── logo.jpeg
 │
 └── docs/
     ├── screenshot-home.png
@@ -174,3 +173,15 @@ Created with:
 ## Motto
 
 > "Going deeper into marine education, one terrible joke at a time."
+
+---
+
+## Copyright
+
+© 2026 Manolo "Dive Daddy" Oliveras. All Rights Reserved.
+
+The Dive Daddy name, logo, branding, artwork, images, and original written
+content are not covered by the MIT License and may not be copied,
+redistributed, or used without permission.
+
+The MIT License applies only to the source code contained in this repository.
