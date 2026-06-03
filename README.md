@@ -22,19 +22,31 @@ This project is intended as a lighthearted tribute to scuba diving culture, dive
 
 ---
 
-## Screenshot
+## Screenshots
 
-![DiveDaddy Homepage](screenshot-home.png)
+### Homepage
 
-![DiveDaddy Tours](screenshot-tours.png)
+![DiveDaddy Homepage](docs/screenshot-home.png)
 
-![DiveDaddy Reservations](screenshot-reservations.png)
+### Tours
 
-![DiveDaddy Events](screenshot-events.png)
+![DiveDaddy Tours](docs/screenshot-tours.png)
 
-![DiveDaddy Reviews](screenshot-reviews.png)
+### Reservations
 
-![DiveDaddy Awards](screenshot-awards.png)
+![DiveDaddy Reservations](docs/screenshot-reservations.png)
+
+### Events
+
+![DiveDaddy Events](docs/screenshot-events.png)
+
+### Reviews
+
+![DiveDaddy Reviews](docs/screenshot-reviews.png)
+
+### Awards
+
+![DiveDaddy Awards](docs/screenshot-awards.png)
 
 ---
 
