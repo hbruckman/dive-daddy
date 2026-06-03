@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>DiveDaddy.com | Scuba Adventures & Marine Life</title>
+
+	<style>
+		:root {
+			--navy: #041d2f;
+			--deep: #063b54;
+			--blue: #00a6c8;
+			--aqua: #8ff3ff;
+			--sand: #ffd166;
+			--coral: #ff6b6b;
+			--white: #ffffff;
+			--ink: #102027;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0
+		}
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f3fbfd;
+			color: var(--ink);
+			line-height: 1.6;
+		}
+
+		header {
+			background:
+				linear-gradient(rgba(4, 29, 47, .8), rgba(4, 29, 47, .5)),
+				url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80");
+			background-size: cover;
+			background-position: center;
+			color: white;
+		}
+
+		nav {
+			position: sticky;
+			top: 0;
+			z-index: 10;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 12px 5%;
+			background: rgba(4, 29, 47, .96);
+		}
+
+		.nav-brand {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font-weight: 900;
+			color: var(--sand);
+		}
+
+		.nav-brand img {
+			width: 52px;
+			height: 52px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			gap: 18px;
+			flex-wrap: wrap;
+		}
+
+		nav a {
+			color: white;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.hero {
+			min-height: 88vh;
+			display: grid;
+			place-items: center;
+			text-align: center;
+			padding: 60px 5%;
+		}
+
+		.hero img {
+			width: min(420px, 85vw);
+			border-radius: 24px;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+			margin-bottom: 28px;
+		}
+
+		.hero h1 {
+			font-size: clamp(3rem, 8vw, 7rem);
+			line-height: .95;
+		}
+
+		.hero p {
+			max-width: 760px;
+			margin: 22px auto;
+			font-size: 1.25rem;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 15px 28px;
+			background: var(--sand);
+			color: #111;
+			border-radius: 999px;
+			text-decoration: none;
+			font-weight: 900;
+			border: none;
+			cursor: pointer;
+		}
+
+		section {
+			padding: 80px 5%;
+		}
+
+		section:nth-child(even) {
+			background: white;
+		}
+
+		h2 {
+			text-align: center;
+			color: var(--navy);
+			font-size: clamp(2rem, 4vw, 3rem);
+			margin-bottom: 36px;
+		}
+
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			gap: 22px;
+		}
+
+		.card {
+			background: white;
+			border-radius: 20px;
+			padding: 26px;
+			box-shadow: 0 8px 30px rgba(0, 0, 0, .09);
+			border: 1px solid #dff5fa;
+		}
+
+		.card h3 {
+			color: var(--deep);
+			margin-bottom: 10px;
+		}
+
+		.badge {
+			display: inline-block;
+			background: var(--aqua);
+			padding: 6px 12px;
+			border-radius: 999px;
+			font-size: .85rem;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.packages .card {
+			border-top: 7px solid var(--blue);
+		}
+
+		.price {
+			font-size: 2rem;
+			font-weight: 900;
+			color: var(--coral);
+			margin: 10px 0;
+		}
+
+		form {
+			max-width: 720px;
+			margin: auto;
+			display: grid;
+			gap: 14px;
+		}
+
+		input,
+		select,
+		textarea {
+			width: 100%;
+			padding: 14px;
+			border: 1px solid #bdd9df;
+			border-radius: 12px;
+			font-size: 1rem;
+		}
+
+		button {
+			font-size: 1rem;
+		}
+
+		.success {
+			display: none;
+			text-align: center;
+			color: #0b7a38;
+			font-weight: bold;
+			background: #dcffe9;
+			padding: 14px;
+			border-radius: 12px;
+		}
+
+		.calendar {
+			overflow-x: auto;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			background: white;
+			border-radius: 16px;
+			overflow: hidden;
+			box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+		}
+
+		th,
+		td {
+			padding: 16px;
+			border-bottom: 1px solid #e6eef0;
+			text-align: left;
+		}
+
+		th {
+			background: var(--navy);
+			color: white;
+		}
+
+		.review {
+			background: #e8fbff;
+		}
+
+		.stars {
+			color: #f2a900;
+			font-size: 1.25rem;
+		}
+
+		.fanclub {
+			text-align: center;
+			background: linear-gradient(135deg, var(--deep), var(--blue));
+			color: white;
+		}
+
+		.fanclub h2 {
+			color: white;
+		}
+
+		.counter {
+			font-size: 3rem;
+			font-weight: 900;
+			color: var(--sand);
+		}
+
+		footer {
+			background: var(--navy);
+			color: white;
+			text-align: center;
+			padding: 34px 5%;
+		}
+
+		.small {
+			font-size: .85rem;
+			opacity: .8;
+		}
+
+		@media(max-width:760px) {
+			nav {
+				flex-direction: column;
+				gap: 12px;
+			}
+
+			nav ul {
+				justify-content: center;
+			}
+
+			th,
+			td {
+				min-width: 160px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<div class="nav-brand">
+				<img src="logo.jpeg" alt="Dive Daddy logo">
+				<span>DiveDaddy.com</span>
+			</div>
+
+			<ul>
+				<li><a href="#packages">Tours</a></li>
+				<li><a href="#reserve">Reserve</a></li>
+				<li><a href="#events">Events</a></li>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="#fanclub">Fan Club</a></li>
+			</ul>
+		</nav>
+
+		<div class="hero">
+			<div>
+				<img src="assets/divedaddy-logo.jpeg" alt="Dive Daddy scuba logo">
+				<h1>Dive Daddy</h1>
+				<p>
+					Scuba adventures, marine life, questionable legends, and enough underwater dad jokes
+					to make a clownfish file a complaint.
+				</p>
+				<a class="btn" href="#reserve">Book Your Descent</a>
+			</div>
+		</div>
+	</header>
+
+	<section id="about">
+		<h2>Meet the Legend</h2>
+
+		<div class="grid">
+			<div class="card">
+				<span class="badge">PADI Divemaster</span>
+				<h3>Professionally Certified</h3>
+				<p>Trained, experienced, calm underwater, and legally distinct from Aquaman.</p>
+			</div>
+
+			<div class="card">
+				<span class="badge">Fish Approved</span>
+				<h3>Marine Charisma</h3>
+				<p>Local fish do not confirm nor deny that they recognize him by fin pattern.</p>
+			</div>
+
+			<div class="card">
+				<span class="badge">Dad Joke Depth: Extreme</span>
+				<h3>Pressure Tested Humor</h3>
+				<p>His jokes get worse the deeper you go. Scientists are monitoring the situation.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="packages" class="packages">
+		<h2>Signature Tours</h2>
+
+		<div class="grid">
+			<div class="card">
+				<h3>The Daddy Deluxe Dive</h3>
+				<p>A reef tour with calm guidance, fish trivia, and occasional dramatic pointing.</p>
+				<div class="price">$69*</div>
+				<p class="small">*Fake joke price. Do not send money to the ocean.</p>
+			</div>
+
+			<div class="card">
+				<h3>The Bubble Boss Experience</h3>
+				<p>Perfect for divers who want better buoyancy and worse puns.</p>
+				<div class="price">$99*</div>
+			</div>
+
+			<div class="card">
+				<h3>The Wreck Collector</h3>
+				<p>Explore a shipwreck while Dive Daddy explains which fish look judgmental.</p>
+				<div class="price">$149*</div>
+			</div>
+
+			<div class="card">
+				<h3>Night Dive & Fish Gossip</h3>
+				<p>See the reef after dark and learn which sea creatures have main-character energy.</p>
+				<div class="price">$129*</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="reserve">
+		<h2>Tour Reservations</h2>
+
+		<form id="bookingForm">
+			<input type="text" placeholder="Your name" required>
+			<input type="email" placeholder="Email address" required>
+
+			<select required>
+				<option value="">Choose your tour</option>
+				<option>The Daddy Deluxe Dive</option>
+				<option>The Bubble Boss Experience</option>
+				<option>The Wreck Collector</option>
+				<option>Night Dive & Fish Gossip</option>
+			</select>
+
+			<input type="date" required>
+
+			<select required>
+				<option value="">Experience level</option>
+				<option>Beginner</option>
+				<option>Certified Open Water</option>
+				<option>Advanced</option>
+				<option>I own three dive computers and still ask for help</option>
+			</select>
+
+			<textarea rows="5" placeholder="Special requests, allergies, fears, fish rivalries, etc."></textarea>
+
+			<button class="btn" type="submit">Submit Fake Reservation</button>
+
+			<div class="success" id="successMessage">
+				Reservation submitted. Dive Daddy has been spiritually notified.
+			</div>
+		</form>
+	</section>
+
+	<section id="events">
+		<h2>Events Calendar</h2>
+
+		<div class="calendar">
+			<table>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Event</th>
+						<th>Description</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+
+				<tbody id="eventTable"></tbody>
+			</table>
+		</div>
+	</section>
+
+	<section id="reviews">
+		<h2>Totally Real Reviews</h2>
+
+		<div class="grid" id="reviewGrid"></div>
+	</section>
+
+	<section>
+		<h2>Fake Awards & Certifications</h2>
+
+		<div class="grid">
+			<div class="card">
+				<h3>Honorary Mayor of Atlantis</h3>
+				<p>Election results remain disputed by three seahorses and one very serious crab.</p>
+			</div>
+
+			<div class="card">
+				<h3>Master of Underwater Dad Jokes</h3>
+				<p>Certified after making an entire dive boat groan before 8:00 AM.</p>
+			</div>
+
+			<div class="card">
+				<h3>Certified Shark Therapist</h3>
+				<p>Not valid in any jurisdiction, oceanic or otherwise.</p>
+			</div>
+
+			<div class="card">
+				<h3>Bubble Appreciation Champion</h3>
+				<p>Three-time finalist. Once disqualified for excessive enthusiasm.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="fanclub" class="fanclub">
+		<h2>Dive Daddy Fan Club</h2>
+
+		<p>Current imaginary membership:</p>
+		<div class="counter" id="counter">0</div>
+		<p>Includes fish, divers, one turtle, and somebody's missing GoPro.</p>
+	</section>
+
+	<footer>
+		<h3>DiveDaddy.com</h3>
+		<p>"Going deeper into marine education, one terrible joke at a time."</p>
+		<p class="small">Parody site. Not an actual booking platform unless Dive Daddy says otherwise.</p>
+	</footer>
+
+	<script>
+		const events = [
+			{
+				date: "June 15",
+				title: "Reef Exploration Day",
+				description: "A scenic reef dive featuring coral, fish, and Dive Daddy pointing at things like he discovered them.",
+				status: "Open"
+			},
+			{
+				date: "July 2",
+				title: "Night Dive & Fish Gossip",
+				description: "A guided evening dive for people who believe marine life has secrets.",
+				status: "Open"
+			},
+			{
+				date: "July 18",
+				title: "Annual Bubble Appreciation Festival",
+				description: "Come celebrate bubbles, tanks, fins, and the human need to buy more gear.",
+				status: "Open"
+			},
+			{
+				date: "August 9",
+				title: "Underwater Dad Joke Championship",
+				description: "Competitors descend. Standards descend faster.",
+				status: "Limited Seats"
+			},
+			{
+				date: "September 1",
+				title: "Lost GoPro Memorial Swim",
+				description: "A respectful journey past all the places people definitely said they clipped it properly.",
+				status: "Waitlist"
+			}
+		];
+
+		const reviews = [
+			{
+				name: "Sarah M.",
+				text: "I went down for a simple reef dive and came back with life advice, fish facts, and better buoyancy."
+			},
+			{
+				name: "Kevin R.",
+				text: "Dive Daddy told me to relax and trust the current. Now I use that advice during staff meetings."
+			},
+			{
+				name: "Anonymous",
+				text: "He really knows how to handle a group underwater. Nobody felt lost, nobody felt rushed, and everybody surfaced smiling."
+			},
+			{
+				name: "Chris T.",
+				text: "I've never felt safer descending with a man named Dive Daddy."
+			},
+			{
+				name: "Rebecca W.",
+				text: "He said he'd show me the best drop-off on the island. He was not exaggerating."
+			},
+			{
+				name: "Jason P.",
+				text: "My depth improved dramatically after spending time with Dive Daddy."
+			},
+			{
+				name: "Mystery Reviewer",
+				text: "The way he manages air consumption is inspiring. I've never seen anyone make a tank last that long."
+			},
+			{
+				name: "Amanda L.",
+				text: "He knows every secret spot underwater. And unlike my ex, he actually showed up on time."
+			},
+			{
+				name: "Turtle Witness #4",
+				text: "He pointed at me like I was part of the tour. Honestly, fair."
+			},
+			{
+				name: "Local Fish",
+				text: "Five stars. Brought snacks for humans. Did not bring snacks for fish. Still charming."
+			},
+			{
+				name: "Brandon K.",
+				text: "I booked the Bubble Boss Experience and left with improved trim, confidence, and a suspicious desire to buy a dive knife I do not need."
+			},
+			{
+				name: "Marina Staff",
+				text: "He returns divers, gear, and morale in better condition than he found them."
+			}
+		];
+
+		const eventTable = document.getElementById("eventTable");
+
+		events.forEach(event => {
+			const row = document.createElement("tr");
+			row.innerHTML = `
+    <td>${event.date}</td>
+    <td><strong>${event.title}</strong></td>
+    <td>${event.description}</td>
+    <td>${event.status}</td>
+  `;
+			eventTable.appendChild(row);
+		});
+
+		const reviewGrid = document.getElementById("reviewGrid");
+
+		reviews.forEach(review => {
+			const card = document.createElement("div");
+			card.className = "card review";
+			card.innerHTML = `
+    <div class="stars">★★★★★</div>
+    <p>"${review.text}"</p>
+    <strong>- ${review.name}</strong>
+  `;
+			reviewGrid.appendChild(card);
+		});
+
+		document.getElementById("bookingForm").addEventListener("submit", function (e) {
+			e.preventDefault();
+			document.getElementById("successMessage").style.display = "block";
+			this.reset();
+		});
+
+		let count = 0;
+		const target = 1287;
+		const counter = document.getElementById("counter");
+
+		const timer = setInterval(() => {
+			count += Math.ceil(target / 80);
+			if (count >= target) {
+				count = target;
+				clearInterval(timer);
+			}
+			counter.textContent = count.toLocaleString();
+		}, 25);
+	</script>
+
+</body>
+
+</html>
