@@ -6,6 +6,10 @@ DiveDaddy.com is a humorous, single-page parody website inspired by a real PADI 
 
 This project is intended as a lighthearted tribute to scuba diving culture, dive professionals, marine life, and the universal truth that every dive boat eventually accumulates an alarming number of dad jokes.
 
+## Live Website
+
+[View DiveDaddy.com on GitHub Pages](https://hbruckman.github.io/dive-daddy/)
+
 ---
 
 ## Features
@@ -77,7 +81,7 @@ DiveDaddy/
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/dive-daddy.git
+git clone https://github.com/hbruckman/dive-daddy.git
 ```
 
 Open the project:
@@ -159,6 +163,8 @@ See the LICENSE file for details.
 ---
 
 ## Credits
+
+Website authored and repository created by **Henry F. Bruckman Vargas** ([@hbruckman](https://github.com/hbruckman)).
 
 Created with:
 
